@@ -15,13 +15,13 @@
     <!-- подменю -->
     <menuitem name="products" id="products_action_window" parent="products_menu_settings"
               action="storehouse_action_window"/>
-
+    <!-- форма ящиков -->
     <record model="ir.actions.act_window" id="boxes_action_window">
       <field name="name">boxes</field>
       <field name="res_model">storehouse.box</field>
       <field name="view_mode">tree,form</field>
     </record>
-
+    <!-- подменю boxes -->
     <menuitem name="boxes" id="boxes_action_window1" parent="products_menu_settings"
               action="boxes_action_window"/>
 
