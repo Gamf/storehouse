@@ -1,18 +1,33 @@
 <?xml version="1.0"?>
 <odoo>
   <data>
-  <!--action to open To-do task list-->
-  <act_window id="action_storehouse_app"
-    name="Storehouse"
-    res_model="storehouse.product"
-    view_mode="tree,form" /> 
-  <!-- menu item to open To-do task list -->
+    <!-- форма продукта -->
+    <record model="ir.actions.act_window" id="storehouse_action_window">
+      <field name="name">product</field>
+      <field name="res_model">storehouse.product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
-  <menuitem id="menu_storehouse_app"
-    name="Storehouse"
-    action="action_storehouse_app" /> 
+    <!-- шапка -->
+    <menuitem name="sTorehouse" id="storehouse_menu_root"/>
+    <!-- гл. меню -->
+    <menuitem name="Products" id="products_menu_settings" parent="storehouse_menu_root"/>
+    <!-- подменю -->
+    <menuitem name="products" id="products_action_window" parent="products_menu_settings"
+              action="storehouse_action_window"/>
+
+    <record model="ir.actions.act_window" id="boxes_action_window">
+      <field name="name">boxes</field>
+      <field name="res_model">storehouse.box</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="boxes" id="boxes_action_window1" parent="products_menu_settings"
+              action="boxes_action_window"/>
 
 
+
+    <!-- описание полей продукта -->
     <record id="storehouse_product_view" model="ir.ui.view">
       <field name="name">product</field>
       <field name="model">storehouse.product</field>
@@ -26,7 +41,7 @@
       </field>
     </record>
 
-    <record id="storehouse_product_view" model="ir.ui.view">
+    <record id="storehouse_box_view" model="ir.ui.view">
       <field name="name">box</field>
       <field name="model">storehouse.box</field>
       <field name="arch" type="xml">
