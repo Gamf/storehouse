@@ -7,9 +7,14 @@ from odoo import models, fields, api
 #	is_done = fields.Boolean('Done?')
 #	active = fields.Boolean('Active', default = True)
 
-class storehouse(models.Model):
-	_name = 'store.house'
+class product(models.Model):
+	_name = 'storehouse.product'
 	id = fields.Char()
 	name = fields.Char()
 	barcode = fields.Char()
+	box = fields.Many2many("storehouse.box", string="Box")
+
+class box(models.Model):
+	_name = 'storehouse.box'
+	name = fields.Char()
 
