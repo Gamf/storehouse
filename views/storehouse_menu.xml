@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<odoo>
+  <data>
+  <!--action to open To-do task list-->
+  <act_window id="action_storehouse_app"
+    name="Storehouse"
+    res_model="store.house"
+    view_mode="tree,form" /> 
+  <!-- menu item to open To-do task list -->
+
+<!--  <record model="ir.actions.act_window" id="storehouse.action_window_boxes">
+      <field name="name">Custom</field>
+      <field name="res_model">store.house</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+
+  <menuitem id="menu_storehouse_app"
+    name="Storehouse"
+    action="action_storehouse_app" /> 
+  
+
+
+<!-- Top menu item -->
+<!--    <menuitem name="Storehouse" id="storehouse.menu_root"/> -->
+
+<!-- Menu categories -->
+<!--    <menuitem name="Storehouse" id="storehouse.menu_settings" parent="storehouse.menu_root"/>
+-->
+    <record id="view_from_storehouse" model="ir.ui.view">
+      <field name="name">To-do Task Form</field>
+      <field name="model">store.house</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="barcode"/>
+        </tree>
+      </field>
+    </record>
+
+  </data>
+</odoo>
