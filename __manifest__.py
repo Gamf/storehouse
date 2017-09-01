@@ -5,6 +5,6 @@
 	'depends' : ['base'],
 	'application' : True,
 	'data' : [
-	'views/storehouse_menu.xml',
+	'views/storehouse_view.xml',
 	],
 }
